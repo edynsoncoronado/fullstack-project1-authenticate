@@ -1,0 +1,30 @@
+{
+  "name": "project1-authenticate",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "backend",
+  "runServices": [
+    "postgres",
+    "backend",
+    "frontend"
+  ],
+  "workspaceFolder": "/workspace",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+  "shutdownAction": "stopCompose",
+  "postCreateCommand": "echo 'DevContainer attached to Docker Compose services'",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-azuretools.vscode-docker",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "bradlc.vscode-tailwindcss"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "editor.formatOnSave": true
+      }
+    }
+  }
+}
